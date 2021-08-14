@@ -1,0 +1,149 @@
+CREATE TABLE Client_master (
+
+Clientno varchar(6) primary key,
+
+Name varchar(25) not null,
+
+Address1 varchar(20),
+
+Address2 varchar(20),
+
+City varchar(15),
+
+Pincode numeric(8),
+
+State varchar(15),
+
+Bal_due numeric(10,2));
+
+
+Create table Product_master(
+
+Product_no varchar(6) primary key,
+
+Description varchar(15) not null,
+
+Profit_percent numeric(4,2) not null,
+
+Unit_measure varchar(10) not null,
+
+Qty_on_hand numeric(8) not null,
+
+Reoder_lvl numeric(8) not null,
+
+Sell_price numeric(8) not null,
+
+Cost_price numeric(8) not null,);
+
+
+
+Create table Sales_master (
+
+Salesman_no varchar    (6) Primary key,
+
+Sal_name varchar (20) Not null,
+
+Address varchar   (20) Not null,
+
+City varchar (20),
+
+State varchar (20),      
+
+Pincode numeric     (6),
+
+Sal_amt numeric    (8,2) Not null,
+
+Tgt_to_get   numeric (6,2) Not null,
+
+Ytd_sales numeric (6,2) Not null,
+
+Remarks varchar (30));
+
+
+Create table Sales_order (
+
+order_no varchar(6) Primary key,
+
+order_date Date(6),
+
+Clientno varchar(6) foreign key references Client_maste (Clientno),
+
+Salesman_no varchar(6) foreign key references Salesman_master,
+
+Dely_type Char(20),
+
+Billed_yn Char(30),
+
+Dely_date Date,
+
+Order_status varchar(10));
+
+
+Create table Sales_order_details (
+
+S_order_no varchar(6) foreign key references s_order_no of sales_order,
+
+Product_no varchar(6) foreign key references product_no of product_master,
+
+Qty_order numeric (8),
+
+Qty_disp numeric (8),
+
+Product_rate numeric(10,2));
+
+
+CREATE TABLE CSE_book(
+
+Cse_book_code numeric(10),
+
+Cse_book_title varchar(30),
+
+Cse_book_author varchar(30),
+
+Cse_book_publ varchar(30),
+
+Cse_book_price numeric(5),
+
+Cse_book_eddi varchar(10));
+
+CREATE TABLE CSE_stud(
+
+Cse_stud_code numeric(10),
+
+Cse_stud_name varchar(50),
+
+Cse_stud_branch varchar(50),
+
+Cse_stud_sems numeric(2),
+
+Cse_stud_card_no numeric(5),
+
+Cse_stud_card_type varchar(50));
+
+
+CREATE TABLE CSE_issu_retu(
+
+Cse_issu_doi date(10),
+
+Cse_issu_a_dor date(10),
+
+Cse_issu_fine numeric(10),
+
+Cse_b_code numeric(10) Foreign key references book_code of CSE_book,
+
+Cse_s_code numeric(10)Foreign key references stud_code of CSE_stud);
+
+
+Insert into Client_master values ('C001','Ivan Bayross','R-274','Bandra','Bombay',400054,'Maharashtra', 15000);
+
+Insert into Client_master values ('C002','Vandana  Saitwal','Rp-67','Pali hill','Madras',780001, 'Tamil Nadu',0);
+
+Insert into Client_master values ('C003','Pramada Jaguste', 'M-09', 'Warli', 'Bombay', 400057, 'Maharashtra', 5000);
+
+Insert into Client_master values ('C004','Basu Navindgi', '789', 'Juhu', 'Bombay', 400056, 'Maharashtra',0);
+
+Insert into Client_master values ( 'C005','Ravi Sreedharam','Z-549', 'C.P.', 'Delhi', 110001, 'Delhi',2000);
+
+Insert into Client_master values ( 'C006','Rukmini','Rz-521', 'Khandala', 'Bombay', 400050, 'Maharashtra',0);
+
+

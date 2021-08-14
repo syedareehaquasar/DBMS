@@ -1,0 +1,19 @@
+create table Persons ( ID int not null, LastName varchar(255) not null, FirstName varchar(255) not null, Age int);      
+
+alter table Persons modify ID int not null unique;
+
+
+create table Orders ( OrderID int not null primary key, OrderNumber int not null, PersonID int references Persons (PersonID) );            --error
+
+CREATE TABLE SALES_ORDER(
+ORDER_NO CHAR(6) PRIMARY KEY,
+CLIENT_NO CHAR(6) REFERENCES CLIENT MASTER,
+ORDER_DATE DATE,
+SALESMAN_NO CHAR(6) REFERENCES SALESMAN MASTER,
+DELIVTYPE CHAR(1) DEFAULT F,
+BILLYN CHAR(1),
+DELIVDATE DATE,
+ORDERSTATUS VARCHAR2(10),
+CONSTRAINT CK_DELIVTYPE CHECK(DELIVTYPE IN('P', 'F')).
+CONSTRAINT CK DELIVDATE CHECK(DELIVDATE> ORDERDATE). CONSTRAINT CK_ORDERSTATUS CHECK(ORDERSTATUS INC'In
+Process, Fulfilled","Backorder", "Cancelled')));

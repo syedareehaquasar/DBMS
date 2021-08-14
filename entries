@@ -1,0 +1,56 @@
+insert into PRODUCT_ MASTER values('P00001','T-Shirts',5,'Piece',200,50,5350,250);
+insert into PRODUCT_ MASTER values('P0345','Shirts',6,'Piece',150,50,500,350);
+insert into PRODUCT_ MASTER values('P06734','Cotton Jeans',5,'Piece',100,20,600,450);
+insert into PRODUCT_ MASTER values('P07865','Jeans',5,'Piece',100,20,750,500);
+insert into PRODUCT_ MASTER values('P07868','Trousers',2,'Piece',150,50,850,550);
+insert into PRODUCT_ MASTER values('P07885','Pull Overs',2.5,'Piece',80,30,700,450);
+insert into PRODUCT_ MASTER values('P07965','Denim Shirts',4,'Piece',100,40,350,250);
+insert into PRODUCT_ MASTER values('P07975','Lycra Tops',5,'Piece',70,30,300,175);
+insert into PRODUCT_ MASTER values('P08865','Skirts',5,'Piece',75,30,450,300);
+
+create table product_master(
+      production varchar(6),
+      description varchar(15),
+      proficpercent decimal(4,2),
+      unitmeasure varchar(10),
+      qtyonhand int(8),
+      reorderlvl int(8),
+      sellprice decimal(8,2),
+      costprice decimal(8,2));
+
+DELETE FROM PRODUCT_MASTER WHERE QTYONHAND=100;
+DELETE FROM CLIENT_MASTER1 WHERE STATE='TAMILNADU';
+ALTER TABLE CLIENT_MASTER1 ADD TELEPHONE INTEGER(10);
+DROP TABLE CLIENT_MASTER1;
+ALTER TABLE SALESMAN_MASTER RENAME TO SMAN_MAST;
+
+UPDATE PRODUCT_MASTER SET COSTPRICE=950 WHERE DESCRIPTION='TROUSERS';
+UPDATE SALESMAN_MASTER SET CITY='PUNE';
+DELETE FROM SALESMAN_MASTER WHERE SALAMT=3500;
+
+UPDATE CLIENT_MASTER1 SET CITY = 'BANGLORE' WHERE CLIENT_NO = 'C00005';
+UPDATE CLIENT_MASTER1 SET BAL_DUE = 1000 WHERE CLIENT_NO = 'C00001';
+
+insert into product_master values('P00001','T-Shirts',5,'Piece',200,50,5350,250);
+insert into product_master values('P0345','Shirts',6,'Piece',150,50,500,350);
+insert into product_master values('P06734','Cotton Jeans',5,'Piece',100,20,600,450);
+insert into product_master values('P07865','Jeans',5,'Piece',100,20,750,500);
+insert into product_master values('P07868','Trousers',2,'Piece',150,50,850,550);
+insert into product_master values('P07885','Pull Overs',2.5,'Piece',80,30,700,450);
+insert into product_master values('P07965','Denim Shirts',4,'Piece',100,40,350,250);
+insert into product_master values('P07975','Lycra Tops',5,'Piece',70,30,300,175);
+insert into product_master values('P08865','Skirts',5,'Piece',75,30,450,300);
+
+
+insert into CLIENT_MASTER1 values('C00001','Ivan', ",", Mumbai Maharashtra', 400054,15000);
+insert into CLIENT_MASTER1 values('C00002',MamtaMuzumdar ",","Madras', Tamil Nadu',780001,0);
+insert into CLIENT_MASTER1 values('C00003', ChhayaBankar ",", Mumbai Maharashtra',400057,5000);
+insert into CLIENT_MASTER1 values('C00004', 'Ashwini Joshi,",","Bangalore ','Karnataka ',560001,0); 
+insert into CLIENT_MASTER1 values('C00005', 'Hansel Colaco '".","Mumbai, Maharashtra'", 400060,2000);
+insert into CLIENT_MASTER1 values('C00006','Deepak Sharma",",", "Mangalore', ' Karnataka', 560050,0);
+
+
+INSERT INTO SALESMAN_MASTER VALUES('S00001', 'AMAN', 'A/14', 'WORLI', 'MUMBAI', '400002', 'MAHARASHTRA', '3000', '100', '50', 'GOOD');
+INSERT INTO SALESMAN_MASTER VALUES('S00002', 'OMKAR', '65', 'NARIMAN', 'MUMBAI', '400001', 'MAHARASHTRA', '3000', '200', '100', 'GOOD');
+INSERT INTO SALESMAN_MASTER VALUES('S00003', 'RAJ', 'P-7', 'BANDRA', 'MUMBAI', '400032', 'MAHARASHTRA', '3000', '200', '100', 'GOOD');
+INSERT INTO SALESMAN_MASTER VALUES('S00004', 'ASHISH', 'A/5', 'JUHU', 'MUMBAI', '400044', 'MAHARASHTRA', '3500', '200', '150', 'GOOD');

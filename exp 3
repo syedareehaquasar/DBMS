@@ -1,0 +1,20 @@
+select name from CLIENT_MASTER;
+
+select * from CLIENT_MASTER;   
+
+select name, city, state from CLIENT_MASTER;
+
+select NAME from CLIENT_MASTER WHERE BAL_DUE = 0;  
+
+select NAME from CLIENT_MASTER WHERE CITY = "MUMBAI";
+
+SELECT distinct * FROM product_master;
+SELECT distinct description FROM product_master;
+
+SELECT SALESMAN_NAME FROM SALESMAN_MASTER WHERE SALAMT = '3000';
+
+SELECT SALESMAN_NAME FROM SALESMAN_MASTER WHERE CITY = 'MUMBAI';
+
+SELECT production FROM product_master where costprice = '150';  
+
+SELECT production FROM product_master where description = 'T-Shirts'; 
